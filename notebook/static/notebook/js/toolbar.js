@@ -126,6 +126,7 @@ define(['jquery','base/js/i18n'], function($, i18n) {
         this.element.addClass('toolbar');
     };
 
+    
     /**
      * Show and hide toolbar
      * @method toggle

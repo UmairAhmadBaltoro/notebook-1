@@ -20,7 +20,7 @@ window.mathjax_url = "{{mathjax_url}}";
 
 <link rel="stylesheet" href="{{ static_url("notebook/css/override.css") }}" type="text/css" />
 <link rel="stylesheet" href=""  id='kernel-css'                             type="text/css" />
-
+<link rel="stylesheet" href="{{static_url("notebook/css/myfile.css")}}"     type="text/css"/>
 {% endblock %}
 
 {% block bodyclasses %}notebook_app {{super()}}{% endblock %}
@@ -57,7 +57,9 @@ data-notebook-path="{{notebook_path | urlencode}}"
 {% block header %}
 <div id="menubar-container" class="container">
 <div id="menubar">
+
     <div id="menus" class="navbar navbar-default" role="navigation">
+
         <div class="container-fluid">
             <button type="button" class="btn btn-default navbar-btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
               <i class="fa fa-bars"></i>
@@ -221,24 +223,9 @@ data-notebook-path="{{notebook_path | urlencode}}"
                                   <a href="#">{% trans %}Raw NBConvert{% endtrans %}</a></li>
                             </ul>
                         </li>
-                        <li class="divider" role="none"></li>
-                        <li id="current_outputs" class="menu_focus_highlight dropdown-submenu" role="none"><a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown">{% trans %}Current Outputs{% endtrans %}</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li id="toggle_current_output" role="none"
-                                    title="{% trans %}Hide/Show the output of the current cell{% endtrans %}">
-                                    <a href="#">{% trans %}Toggle{% endtrans %}</a>
-                                </li>
-                                <li id="toggle_current_output_scroll"
-                                    title="{% trans %}Scroll the output of the current cell{% endtrans %}">
-                                    <a href="#">{% trans %}Toggle Scrolling{% endtrans %}</a>
-                                </li>
-                                <li id="clear_current_output"
-                                    title="{% trans %}Clear the output of the current cell{% endtrans %}">
-                                    <a href="#">{% trans %}Clear{% endtrans %}</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="all_outputs" class="menu_focus_highlight dropdown-submenu" role="none"><a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown">{% trans %}All Output{% endtrans %}</a>
+
+                    
+                            <li id="all_outputs" class="menu_focus_highlight dropdown-submenu" role="none"><a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown">{% trans %}All Output{% endtrans %}</a>
                             <ul class="dropdown-menu" role="menu">
                                 <li id="toggle_all_output" role="none"
                                     title="{% trans %}Hide/Show the output of all cells{% endtrans %}">
@@ -325,6 +312,44 @@ data-notebook-path="{{notebook_path | urlencode}}"
                         {% endblock %}
                     </ul>
                 </li>
+                <!-- My code -->
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" id="selectcores">{% trans %}Select Number of Cores{% endtrans %}</a>
+                    <ul id="select_cores" class="dropdown-menu" aria-labelledby="selectcores">
+                        <li>
+                            <a href="#">{% trans %}10{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}20{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}30{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}40{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}50{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}60{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}70{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}80{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}90{% endtrans %}</a>
+                        </li>
+                        <li>
+                            <a href="#">{% trans %}100{% endtrans %}</a>
+                        </li>
+                        
+
+                    </ul>
+                </li>
+
               </ul>
             </div>
         </div>
